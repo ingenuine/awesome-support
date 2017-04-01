@@ -45,8 +45,8 @@ Run all tests
 
 Run frontend and backend tests separately
 
-    rake test
-    rake jasmine
+    rspec
+    rake spec:javascripts
 
 ## Todo
 Some of possible things to add in the future
