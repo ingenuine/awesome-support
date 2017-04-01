@@ -1,0 +1,47 @@
+class SelectInput extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(e) {
+    this.props.onInputChange(this.props.name, e.target.value)
+  }
+
+  render() {
+    let options = _.map(this.props.options, function(option) {
+      let id = option.id || option
+      let name = option.name || option
+      return <option key={id} value={id}>{name}</option>
+    })
+    options.unshift(<option key="-1" value="">Choose one...</option>)
+
+    return (
+      <InputWrapper errors={this.props.errors}>
+        <label>{this.props.name}</label>
+        <select
+          className={this.props.className}
+          name={this.props.name}
+          value={this.props.value}
+          onChange={this.handleChange}>
+          {options}
+        </select>
+      </InputWrapper>
+    )
+  }
+}
+
+SelectInput.propTypes = {
+  options:       React.PropTypes.array.isRequired,
+  className:     React.PropTypes.string,
+  errors:        React.PropTypes.array,
+  name:          React.PropTypes.string.isRequired,
+  onInputChange: React.PropTypes.func.isRequired,
+  value:         React.PropTypes.any
+}
+
+SelectInput.defaultProps = {
+  className: 'form-control'
+}

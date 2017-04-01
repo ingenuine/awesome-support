@@ -1,0 +1,19 @@
+.row
+  .col-md-4
+  .col-md-4
+    .panel.panel-auth
+      .panel-heading
+        h1 Change my password
+      .panel-body
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = f.hidden_field :reset_password_token
+          .form-group
+            = f.label :password, "New password"
+            = f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control"
+          .form-group
+            = f.label :password_confirmation, "Confirm new password"
+            = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+          .form-group
+            = f.submit "Do it", class: "btn btn-auth btn-lg btn-block", data: {disable_with: "Changing password..."}
+      .panel-footer
+        = render "users/shared/links"

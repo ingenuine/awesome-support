@@ -1,0 +1,92 @@
+.navbar-brand
+  padding: 10px
+.container
+  padding-top: 87px
+  .panel
+    &.panel-empty
+      padding: 40px 0
+    a
+      text-decoration: none
+    .panel-heading
+      h4
+        i, span
+          padding-right: 10px
+    .panel-footer
+      background-color: transparent
+      border-top-color: #F3F7FA
+      .label
+        line-height: 3
+
+// AVATAR WITH INITIALS
+@mixin avatar($size)
+  width: $size
+  height: $size
+  background-color: darken($body-bg, 5%)
+  text-align: center
+  border-radius: 50%
+  display: inline-block
+  margin-right: 5px
+  .initials
+    position: relative
+    top: $size*0.25
+    font-size: $size*0.5
+    line-height: $size*0.5
+    color: #fff
+    font-weight: bold
+    font-family: "Arial", monospace
+
+.avatar-circle
+  @include avatar(100px)
+.avatar-circle-sm
+  @include avatar(35px)
+.avatar-circle-lg
+  @include avatar(250px)
+
+// TEXTAREA GROW
+textarea
+  overflow: hidden
+  transition: height 0.2s ease
+
+.textarea--ghost
+  opacity: 0.3
+  display: block
+  white-space: pre-wrap
+  word-wrap: break-word
+  visibility: hidden
+  position: absolute
+  top: 0
+
+// STATUS COLORS
+.label-active
+  background-color: $brand-info
+.label-closed
+  background-color: $brand-success
+.label-replied
+  background-color: $brand-warning
+.label
+  text-transform: uppercase
+
+.hidden-active, .hidden-replied, .hidden-closed
+  > td
+    display: none
+.visible-active, .visible-replied, .visible-closed
+  > td
+    display: table-cell
+
+#admin, #customer, #agent
+  .navbar-brand
+    svg.logo
+      path
+        fill: $brand-primary
+  .navbar
+    background-color: #fff
+    border-bottom-color: #fff
+    .navbar-nav > li > a
+      color: $brand-primary
+//   .navbar-header
+//     float: left
+//     padding: 15px
+//     text-align: center
+//     width: 100%
+// .navbar-brand
+//   float:none

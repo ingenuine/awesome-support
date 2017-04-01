@@ -1,0 +1,14 @@
+- if alert.present?
+  .row
+    .col-md-12
+      .alert.alert-warning
+        button.close aria-label="Close" data-dismiss="alert" type="button" 
+          span aria-hidden="true"  &times;
+        p= alert
+- if notice.present?
+  .row
+    .col-md-12
+      .alert.alert-success
+        button.close aria-label="Close" data-dismiss="alert" type="button" 
+          span aria-hidden="true"  &times;
+        p= notice

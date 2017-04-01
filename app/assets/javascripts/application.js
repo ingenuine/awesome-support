@@ -1,0 +1,15 @@
+//= require moment
+//= require jquery
+//= require bootstrap-sprockets
+//= require jquery_ujs
+//= require turbolinks
+//= require lodash
+//= require react
+//= require react_ujs
+//= require react-router-dom
+//= require classnames
+//= require Chart
+//= require chartkick
+//= require react-chartkick
+//= require components
+//= require_tree .
